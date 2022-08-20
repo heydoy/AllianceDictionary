@@ -14,6 +14,8 @@
 		A2517A4028AFE9FA001EFEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2517A3F28AFE9FA001EFEDC /* Assets.xcassets */; };
 		A2517A4328AFE9FA001EFEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2517A4128AFE9FA001EFEDC /* LaunchScreen.storyboard */; };
 		A2517A4B28AFEA11001EFEDC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A2517A4A28AFEA11001EFEDC /* .gitignore */; };
+		A2517A5D28B0EA34001EFEDC /* armydictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A5C28B0EA34001EFEDC /* armydictionary.json */; };
+		A2517A6228B0EC01001EFEDC /* ArmyJargon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A2517A4228AFE9FA001EFEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2517A4428AFE9FA001EFEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2517A4A28AFEA11001EFEDC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A2517A5C28B0EA34001EFEDC /* armydictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = armydictionary.json; sourceTree = "<group>"; };
+		A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyJargon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +63,9 @@
 		A2517A3528AFE9F8001EFEDC /* ArmiDic */ = {
 			isa = PBXGroup;
 			children = (
-				A2517A3628AFE9F8001EFEDC /* AppDelegate.swift */,
-				A2517A3828AFE9F8001EFEDC /* SceneDelegate.swift */,
+				A2517A5E28B0EB03001EFEDC /* App */,
+				A2517A5F28B0EB09001EFEDC /* Resources */,
+				A2517A6028B0EBEE001EFEDC /* Model */,
 				A2517A3A28AFE9F8001EFEDC /* ViewController.swift */,
 				A2517A3C28AFE9F8001EFEDC /* Main.storyboard */,
 				A2517A3F28AFE9FA001EFEDC /* Assets.xcassets */,
@@ -68,6 +73,31 @@
 				A2517A4428AFE9FA001EFEDC /* Info.plist */,
 			);
 			path = ArmiDic;
+			sourceTree = "<group>";
+		};
+		A2517A5E28B0EB03001EFEDC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A2517A3628AFE9F8001EFEDC /* AppDelegate.swift */,
+				A2517A3828AFE9F8001EFEDC /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A2517A5F28B0EB09001EFEDC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2517A5C28B0EA34001EFEDC /* armydictionary.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A2517A6028B0EBEE001EFEDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +116,8 @@
 			dependencies = (
 			);
 			name = ArmiDic;
+			packageProductDependencies = (
+			);
 			productName = ArmiDic;
 			productReference = A2517A3328AFE9F8001EFEDC /* ArmiDic.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +146,8 @@
 				Base,
 			);
 			mainGroup = A2517A2A28AFE9F8001EFEDC;
+			packageReferences = (
+			);
 			productRefGroup = A2517A3428AFE9F8001EFEDC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,6 +164,7 @@
 			files = (
 				A2517A4B28AFEA11001EFEDC /* .gitignore in Resources */,
 				A2517A4328AFE9FA001EFEDC /* LaunchScreen.storyboard in Resources */,
+				A2517A5D28B0EA34001EFEDC /* armydictionary.json in Resources */,
 				A2517A4028AFE9FA001EFEDC /* Assets.xcassets in Resources */,
 				A2517A3E28AFE9F8001EFEDC /* Main.storyboard in Resources */,
 			);
@@ -143,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2517A3B28AFE9F8001EFEDC /* ViewController.swift in Sources */,
+				A2517A6228B0EC01001EFEDC /* ArmyJargon.swift in Sources */,
 				A2517A3728AFE9F8001EFEDC /* AppDelegate.swift in Sources */,
 				A2517A3928AFE9F8001EFEDC /* SceneDelegate.swift in Sources */,
 			);
@@ -294,21 +330,24 @@
 				DEVELOPMENT_TEAM = F7B353LPM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArmiDic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "한미연합사전";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kimdee.ArmiDic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kimdee.AllianceDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,21 +361,24 @@
 				DEVELOPMENT_TEAM = F7B353LPM3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArmiDic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "한미연합사전";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kimdee.ArmiDic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kimdee.AllianceDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
