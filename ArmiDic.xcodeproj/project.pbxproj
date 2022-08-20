@@ -9,20 +9,23 @@
 /* Begin PBXBuildFile section */
 		A2517A3728AFE9F8001EFEDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A3628AFE9F8001EFEDC /* AppDelegate.swift */; };
 		A2517A3928AFE9F8001EFEDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A3828AFE9F8001EFEDC /* SceneDelegate.swift */; };
-		A2517A3B28AFE9F8001EFEDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A3A28AFE9F8001EFEDC /* ViewController.swift */; };
+		A2517A3B28AFE9F8001EFEDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A3A28AFE9F8001EFEDC /* HomeViewController.swift */; };
 		A2517A3E28AFE9F8001EFEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2517A3C28AFE9F8001EFEDC /* Main.storyboard */; };
 		A2517A4028AFE9FA001EFEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2517A3F28AFE9FA001EFEDC /* Assets.xcassets */; };
 		A2517A4328AFE9FA001EFEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2517A4128AFE9FA001EFEDC /* LaunchScreen.storyboard */; };
 		A2517A4B28AFEA11001EFEDC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A2517A4A28AFEA11001EFEDC /* .gitignore */; };
 		A2517A5D28B0EA34001EFEDC /* armydictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A5C28B0EA34001EFEDC /* armydictionary.json */; };
 		A2517A6228B0EC01001EFEDC /* ArmyJargon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */; };
+		A2517A6528B13AEC001EFEDC /* HomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */; };
+		A2517A6728B13AFE001EFEDC /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */; };
+		A2517A6A28B13C2E001EFEDC /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6928B13C2E001EFEDC /* ReusableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A2517A3328AFE9F8001EFEDC /* ArmiDic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArmiDic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2517A3628AFE9F8001EFEDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2517A3828AFE9F8001EFEDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2517A3A28AFE9F8001EFEDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2517A3A28AFE9F8001EFEDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A2517A3D28AFE9F8001EFEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2517A3F28AFE9FA001EFEDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2517A4228AFE9FA001EFEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		A2517A4A28AFEA11001EFEDC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A2517A5C28B0EA34001EFEDC /* armydictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = armydictionary.json; sourceTree = "<group>"; };
 		A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyJargon.swift; sourceTree = "<group>"; };
+		A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionReusableView.swift; sourceTree = "<group>"; };
+		A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2517A6928B13C2E001EFEDC /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +69,14 @@
 		A2517A3528AFE9F8001EFEDC /* ArmiDic */ = {
 			isa = PBXGroup;
 			children = (
+				A2517A6828B13BE7001EFEDC /* Extension */,
 				A2517A5E28B0EB03001EFEDC /* App */,
 				A2517A5F28B0EB09001EFEDC /* Resources */,
 				A2517A6028B0EBEE001EFEDC /* Model */,
-				A2517A3A28AFE9F8001EFEDC /* ViewController.swift */,
+				A2517A6328B13A3B001EFEDC /* Home */,
 				A2517A3C28AFE9F8001EFEDC /* Main.storyboard */,
-				A2517A3F28AFE9FA001EFEDC /* Assets.xcassets */,
 				A2517A4128AFE9FA001EFEDC /* LaunchScreen.storyboard */,
+				A2517A3F28AFE9FA001EFEDC /* Assets.xcassets */,
 				A2517A4428AFE9FA001EFEDC /* Info.plist */,
 			);
 			path = ArmiDic;
@@ -98,6 +105,24 @@
 				A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A2517A6328B13A3B001EFEDC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A2517A3A28AFE9F8001EFEDC /* HomeViewController.swift */,
+				A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */,
+				A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A2517A6828B13BE7001EFEDC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A2517A6928B13C2E001EFEDC /* ReusableProtocol.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2517A3B28AFE9F8001EFEDC /* ViewController.swift in Sources */,
+				A2517A3B28AFE9F8001EFEDC /* HomeViewController.swift in Sources */,
+				A2517A6A28B13C2E001EFEDC /* ReusableProtocol.swift in Sources */,
 				A2517A6228B0EC01001EFEDC /* ArmyJargon.swift in Sources */,
 				A2517A3728AFE9F8001EFEDC /* AppDelegate.swift in Sources */,
 				A2517A3928AFE9F8001EFEDC /* SceneDelegate.swift in Sources */,
+				A2517A6528B13AEC001EFEDC /* HomeCollectionReusableView.swift in Sources */,
+				A2517A6728B13AFE001EFEDC /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
