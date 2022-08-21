@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 
 class HomeViewController: UIViewController {
@@ -14,6 +15,8 @@ class HomeViewController: UIViewController {
     
     let pagination = 10
     
+    
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +24,17 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        getVoca()
+        
     }
     
     // MARK: - Actions
-    
+    func getVoca() {
+        HomeViewModel.shared.loadJSON()
+           
+
+        
+    }
     
     
     // MARK: - Helpers
@@ -66,9 +76,34 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionReusableView.reuseIdentifier, for: indexPath) as? HomeCollectionReusableView else { return UICollectionReusableView() }
         
         header.configureUI()
+        header.todayVocaDetailButton.addTarget(self, action: #selector(goDetail), for: .touchUpInside)
         
         return header
     }
     
+    /// 셀 선택되었을 시
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        goDetail()
+    }
     
+    
+}
+
+// MARK: - CollectionView Actions
+extension HomeViewController {
+    
+    @objc
+    func goDetail() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as? DetailViewController else {  return }
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .coverVertical
+        
+        // 데이터 전달하기
+        
+        self.present(vc, animated: true)
+    }
 }

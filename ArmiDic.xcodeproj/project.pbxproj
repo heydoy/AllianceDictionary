@@ -23,6 +23,18 @@
 		A2517A6F28B14C2F001EFEDC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A2517A6E28B14C2F001EFEDC /* SwiftyJSON */; };
 		A2517A7328B1C9DF001EFEDC /* armyVoca.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A7228B1C9DF001EFEDC /* armyVoca.json */; };
 		A2517A7528B1CA12001EFEDC /* armyvoca.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A7428B1CA12001EFEDC /* armyvoca.json */; };
+		A2517A7828B20031001EFEDC /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A7728B20031001EFEDC /* SearchCollectionReusableView.swift */; };
+		A2517A7A28B20083001EFEDC /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A7928B20083001EFEDC /* SearchCollectionViewCell.swift */; };
+		A2517A7C28B200D8001EFEDC /* EmptySearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A7B28B200D8001EFEDC /* EmptySearchCollectionViewCell.swift */; };
+		A2517A7E28B20145001EFEDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A7D28B20145001EFEDC /* SearchViewController.swift */; };
+		A2517A8028B20639001EFEDC /* HistorySearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A7F28B20639001EFEDC /* HistorySearchCollectionViewCell.swift */; };
+		A2517A8228B208E8001EFEDC /* HistoryQueryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8128B208E8001EFEDC /* HistoryQueryCollectionViewCell.swift */; };
+		A2517A8528B217E6001EFEDC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8428B217E6001EFEDC /* DetailViewController.swift */; };
+		A2517A8828B21C1D001EFEDC /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8728B21C1D001EFEDC /* BookmarkViewController.swift */; };
+		A2517A8A28B21C4D001EFEDC /* BookmarkCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8928B21C4D001EFEDC /* BookmarkCollectionReusableView.swift */; };
+		A2517A8C28B21C75001EFEDC /* BookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8B28B21C75001EFEDC /* BookmarkCollectionViewCell.swift */; };
+		A2517A8E28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8D28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift */; };
+		A2517A9328B2299C001EFEDC /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = A2517A9228B2299C001EFEDC /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +55,17 @@
 		A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A2517A7228B1C9DF001EFEDC /* armyVoca.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = armyVoca.json; sourceTree = "<group>"; };
 		A2517A7428B1CA12001EFEDC /* armyvoca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = armyvoca.json; path = ../../../../../../../Downloads/armyvoca.json; sourceTree = "<group>"; };
+		A2517A7728B20031001EFEDC /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
+		A2517A7928B20083001EFEDC /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2517A7B28B200D8001EFEDC /* EmptySearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2517A7D28B20145001EFEDC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A2517A7F28B20639001EFEDC /* HistorySearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2517A8128B208E8001EFEDC /* HistoryQueryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQueryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2517A8428B217E6001EFEDC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A2517A8728B21C1D001EFEDC /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		A2517A8928B21C4D001EFEDC /* BookmarkCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionReusableView.swift; sourceTree = "<group>"; };
+		A2517A8B28B21C75001EFEDC /* BookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2517A8D28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2517A9328B2299C001EFEDC /* Toast in Frameworks */,
 				A2517A6F28B14C2F001EFEDC /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +105,10 @@
 				A2517A5E28B0EB03001EFEDC /* App */,
 				A2517A5F28B0EB09001EFEDC /* Resources */,
 				A2517A6028B0EBEE001EFEDC /* Model */,
+				A2517A8328B217CC001EFEDC /* Detail */,
 				A2517A6328B13A3B001EFEDC /* Home */,
+				A2517A7628B2000D001EFEDC /* Search */,
+				A2517A8628B21C0B001EFEDC /* Bookmark */,
 				A2517A3C28AFE9F8001EFEDC /* Main.storyboard */,
 				A2517A4128AFE9FA001EFEDC /* LaunchScreen.storyboard */,
 				A2517A3F28AFE9FA001EFEDC /* Assets.xcassets */,
@@ -120,10 +147,10 @@
 		A2517A6328B13A3B001EFEDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */,
 				A2517A3A28AFE9F8001EFEDC /* HomeViewController.swift */,
 				A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */,
 				A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */,
-				A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -134,6 +161,38 @@
 				A2517A6928B13C2E001EFEDC /* ReusableProtocol.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A2517A7628B2000D001EFEDC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A2517A7D28B20145001EFEDC /* SearchViewController.swift */,
+				A2517A7728B20031001EFEDC /* SearchCollectionReusableView.swift */,
+				A2517A7928B20083001EFEDC /* SearchCollectionViewCell.swift */,
+				A2517A7B28B200D8001EFEDC /* EmptySearchCollectionViewCell.swift */,
+				A2517A7F28B20639001EFEDC /* HistorySearchCollectionViewCell.swift */,
+				A2517A8128B208E8001EFEDC /* HistoryQueryCollectionViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A2517A8328B217CC001EFEDC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A2517A8428B217E6001EFEDC /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		A2517A8628B21C0B001EFEDC /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				A2517A8728B21C1D001EFEDC /* BookmarkViewController.swift */,
+				A2517A8928B21C4D001EFEDC /* BookmarkCollectionReusableView.swift */,
+				A2517A8B28B21C75001EFEDC /* BookmarkCollectionViewCell.swift */,
+				A2517A8D28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift */,
+			);
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +213,7 @@
 			name = ArmiDic;
 			packageProductDependencies = (
 				A2517A6E28B14C2F001EFEDC /* SwiftyJSON */,
+				A2517A9228B2299C001EFEDC /* Toast */,
 			);
 			productName = ArmiDic;
 			productReference = A2517A3328AFE9F8001EFEDC /* ArmiDic.app */;
@@ -185,6 +245,7 @@
 			mainGroup = A2517A2A28AFE9F8001EFEDC;
 			packageReferences = (
 				A2517A6D28B14C2F001EFEDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				A2517A9128B2299C001EFEDC /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = A2517A3428AFE9F8001EFEDC /* Products */;
 			projectDirPath = "";
@@ -217,13 +278,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2517A8028B20639001EFEDC /* HistorySearchCollectionViewCell.swift in Sources */,
+				A2517A7828B20031001EFEDC /* SearchCollectionReusableView.swift in Sources */,
+				A2517A8E28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift in Sources */,
 				A2517A3B28AFE9F8001EFEDC /* HomeViewController.swift in Sources */,
 				A2517A6A28B13C2E001EFEDC /* ReusableProtocol.swift in Sources */,
 				A2517A6228B0EC01001EFEDC /* ArmyJargon.swift in Sources */,
+				A2517A7C28B200D8001EFEDC /* EmptySearchCollectionViewCell.swift in Sources */,
+				A2517A7A28B20083001EFEDC /* SearchCollectionViewCell.swift in Sources */,
+				A2517A7E28B20145001EFEDC /* SearchViewController.swift in Sources */,
 				A2517A6C28B148B3001EFEDC /* HomeViewModel.swift in Sources */,
 				A2517A3728AFE9F8001EFEDC /* AppDelegate.swift in Sources */,
 				A2517A3928AFE9F8001EFEDC /* SceneDelegate.swift in Sources */,
 				A2517A6528B13AEC001EFEDC /* HomeCollectionReusableView.swift in Sources */,
+				A2517A8A28B21C4D001EFEDC /* BookmarkCollectionReusableView.swift in Sources */,
+				A2517A8828B21C1D001EFEDC /* BookmarkViewController.swift in Sources */,
+				A2517A8C28B21C75001EFEDC /* BookmarkCollectionViewCell.swift in Sources */,
+				A2517A8528B217E6001EFEDC /* DetailViewController.swift in Sources */,
+				A2517A8228B208E8001EFEDC /* HistoryQueryCollectionViewCell.swift in Sources */,
 				A2517A6728B13AFE001EFEDC /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +530,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A2517A9128B2299C001EFEDC /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -465,6 +545,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A2517A6D28B14C2F001EFEDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		A2517A9228B2299C001EFEDC /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2517A9128B2299C001EFEDC /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

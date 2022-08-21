@@ -8,6 +8,11 @@
 import Foundation
 
 
+struct ArmyJargons: Codable {
+    var list: [ArmyJargon]
+}
+
+
 struct ArmyJargon: Codable {
     
     // 한글, 약어, 영어

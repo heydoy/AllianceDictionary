@@ -18,8 +18,12 @@ class HomeCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var englishVocaLabel: UILabel!
     
 
+    @IBOutlet weak var todayVocaDetailButton: UIButton!
+    
     
     func configureUI() {
         vocaBackgroundView.layer.cornerRadius = 12
+        
+        
     }
 }
