@@ -6,140 +6,144 @@
 //
 
 import UIKit
-import Toast
+
+enum SearchCell: Int {
+    case history = 0
+    case result = 1
+}
 
 class SearchViewController: UIViewController {
-    
     // MARK: - Properties
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    var query = "" {
-        didSet {
-            self.collectionView.reloadData()
-        }
-    }
-    var numberOfResult = 0
-    var numberOfHistory = 3
+    var numberOfResult: Int = 4
+    var numberOfHistory: Int = 7
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.delegate = self
-        
         return searchBar
     }()
     
-    // MARK: - Lifecycle
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        searchBar.placeholder = "찾으려는 단어를 입력해주세요"
-        
+
     }
-    // MARK: - Actions
     
-    // MARK: - Helpers
-    
-    
+
 }
 
-// MARK: - Collection View
-
-
-extension SearchViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+// MARK: - TableView
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2 // 검색기록 , 검색결과
+    }
     
-    /// 셀 개수
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == SearchCell.history.rawValue {
+            return 1
+        } else if section == SearchCell.result.rawValue {
+            return numberOfResult == 0 ? 1 : numberOfResult
+        } else {
+            return 0
+        }
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == SearchCell.history.rawValue {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchHistoryTableViewCell.reuseIdentifier, for: indexPath) as? SearchHistoryTableViewCell else { return UITableViewCell() }
+            cell.historyQueryCollectionView.delegate = self
+            cell.historyQueryCollectionView.dataSource = self
+            
+            return cell
+            
+        } else if indexPath.section == SearchCell.result.rawValue {
+            if numberOfResult == 0 {
+                // 결과가 없을 때
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchEmptyTableViewCell.reuseIdentifier, for: indexPath) as? SearchEmptyTableViewCell else { return UITableViewCell() }
+                
+                return cell
+                
+            } else {
+                // 결과가 1개 이상 있을 때
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.reuseIdentifier, for: indexPath)  as? SearchResultTableViewCell else { return UITableViewCell() }
+                
+                return cell
+            }
+        } else {
+            return UITableViewCell()
+        }
+        
+        
+        
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 { return nil }
+        else { return "검색결과"}
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SearchHeaderView.reuseIdentifier) as? SearchHeaderView else { return nil }
+            
+            header.searchBar = searchBar
+            return header
+            
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            return 88
+        } else {
+            return 126
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 0 {
+            return 0
+        }  else {
+            return 20
+        }
+        
+    }
+    
+   
+}
+
+
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return numberOfResult == 0 ? 1 : numberOfResult
-        
+        return numberOfHistory
     }
     
-    /// 셀 구성
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryQueryCollectionViewCell.reuseIdentifier, for: indexPath) as? HistoryQueryCollectionViewCell else { return UICollectionViewCell() }
         
-        if query.isEmpty {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistorySearchCollectionViewCell.reuseIdentifier, for: indexPath) as? HistorySearchCollectionViewCell else { return UICollectionViewCell() }
-            return cell
-            
-        } else if numberOfResult == 0 {
-            // 빈 검색결과 셀 보여주기
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptySearchCollectionViewCell.reuseIdentifier, for: indexPath) as? EmptySearchCollectionViewCell else { return UICollectionViewCell() }
-            cell.configureLabel(query: self.query)
-            return cell
-            
-        } else {
-            //검색결과 세팅하기
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.reuseIdentifier, for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
-            
-            return cell
-            
-        }
-        
-        
+        cell.configureLabel(query: "검색어 \(indexPath)")
+        return cell
     }
     
-    /// 셀 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = UIScreen.main.bounds.width
-        let inset: CGFloat = 20
-        
-        let cellWidth: CGFloat = width - (inset * 2)
-        
-        
-        
-        if numberOfResult == 0 {
-            // 검색결과 없을 시 셀 크기
-            
-            return CGSize(width: cellWidth, height: 250)
-            
-        } else {
-            // 검색결과 셀 크기
-            return CGSize(width: cellWidth, height: 102)
-        }
-        
-        
-        
-    }
-    
-    /// 헤더 설정
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SearchCollectionReusableView.reuseIdentifier, for: indexPath) as? SearchCollectionReusableView else { return UICollectionReusableView() }
-        
-        
-        header.searchBar = self.searchBar
-        
-        return header
-        
-        
+        return CGSize(width: 72,height: 44)
     }
 }
 
-
-// MARK: - 검색바 Delegate
 extension SearchViewController: UISearchBarDelegate {
-
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
-        print("취소버튼 클릭")
-        
-    }
-    
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-      
-        print("검색")
-
-        
-    }
-    
-    func keyboardDismiss() {
-        searchBar.resignFirstResponder()
-    }
 }

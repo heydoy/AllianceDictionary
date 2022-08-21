@@ -9,18 +9,17 @@ import UIKit
 
 class HistoryQueryCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var queryLabel: UILabel!
-    @IBOutlet weak var deleteButton: UIButton!
-    
     override func awakeFromNib() {
-        configureUI()
+        super.awakeFromNib()
+        
+        self.layer.cornerRadius = 12
     }
     
-    func configureUI() {
-        self.layer.cornerRadius = 22
+    @IBOutlet weak var historyQueryLabel: UILabel!
+    @IBOutlet weak var removeQueryButton: UIButton!
+    
+    func configureLabel(query: String) {
+        historyQueryLabel.text = query
     }
     
-    func configureQuery(query: String ) {
-        queryLabel.text = query
-    }
 }
