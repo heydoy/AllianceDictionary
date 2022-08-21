@@ -14,15 +14,12 @@
 		A2517A4028AFE9FA001EFEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2517A3F28AFE9FA001EFEDC /* Assets.xcassets */; };
 		A2517A4328AFE9FA001EFEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2517A4128AFE9FA001EFEDC /* LaunchScreen.storyboard */; };
 		A2517A4B28AFEA11001EFEDC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A2517A4A28AFEA11001EFEDC /* .gitignore */; };
-		A2517A5D28B0EA34001EFEDC /* armydictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A5C28B0EA34001EFEDC /* armydictionary.json */; };
 		A2517A6228B0EC01001EFEDC /* ArmyJargon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */; };
 		A2517A6528B13AEC001EFEDC /* HomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */; };
 		A2517A6728B13AFE001EFEDC /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */; };
 		A2517A6A28B13C2E001EFEDC /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6928B13C2E001EFEDC /* ReusableProtocol.swift */; };
-		A2517A6C28B148B3001EFEDC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */; };
+		A2517A6C28B148B3001EFEDC /* ArmyJargonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6B28B148B3001EFEDC /* ArmyJargonManager.swift */; };
 		A2517A6F28B14C2F001EFEDC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A2517A6E28B14C2F001EFEDC /* SwiftyJSON */; };
-		A2517A7328B1C9DF001EFEDC /* armyVoca.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A7228B1C9DF001EFEDC /* armyVoca.json */; };
-		A2517A7528B1CA12001EFEDC /* armyvoca.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A7428B1CA12001EFEDC /* armyvoca.json */; };
 		A2517A8528B217E6001EFEDC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8428B217E6001EFEDC /* DetailViewController.swift */; };
 		A2517A8828B21C1D001EFEDC /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8728B21C1D001EFEDC /* BookmarkViewController.swift */; };
 		A2517A8A28B21C4D001EFEDC /* BookmarkCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8928B21C4D001EFEDC /* BookmarkCollectionReusableView.swift */; };
@@ -30,11 +27,12 @@
 		A2517A8E28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A8D28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift */; };
 		A2517A9328B2299C001EFEDC /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = A2517A9228B2299C001EFEDC /* Toast */; };
 		A2517A9528B2369A001EFEDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A9428B2369A001EFEDC /* SearchViewController.swift */; };
-		A2517A9728B23744001EFEDC /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A9628B23744001EFEDC /* SearchHeaderView.swift */; };
 		A2517A9928B237AA001EFEDC /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A9828B237AA001EFEDC /* SearchResultTableViewCell.swift */; };
 		A2517A9B28B23801001EFEDC /* SearchEmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A9A28B23801001EFEDC /* SearchEmptyTableViewCell.swift */; };
 		A2517A9D28B23875001EFEDC /* SearchHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A9C28B23875001EFEDC /* SearchHistoryTableViewCell.swift */; };
 		A2517A9F28B238C2001EFEDC /* HistoryQueryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A9E28B238C2001EFEDC /* HistoryQueryCollectionViewCell.swift */; };
+		A2580DFC28B2466C00F701BA /* armyvoca.json in Resources */ = {isa = PBXBuildFile; fileRef = A2580DFB28B2466C00F701BA /* armyvoca.json */; };
+		A2580DFF28B25DA600F701BA /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2580DFE28B25DA600F701BA /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,25 +45,23 @@
 		A2517A4228AFE9FA001EFEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2517A4428AFE9FA001EFEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2517A4A28AFEA11001EFEDC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		A2517A5C28B0EA34001EFEDC /* armydictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = armydictionary.json; sourceTree = "<group>"; };
 		A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyJargon.swift; sourceTree = "<group>"; };
 		A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionReusableView.swift; sourceTree = "<group>"; };
 		A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2517A6928B13C2E001EFEDC /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
-		A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		A2517A7228B1C9DF001EFEDC /* armyVoca.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = armyVoca.json; sourceTree = "<group>"; };
-		A2517A7428B1CA12001EFEDC /* armyvoca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = armyvoca.json; path = ../../../../../../../Downloads/armyvoca.json; sourceTree = "<group>"; };
+		A2517A6B28B148B3001EFEDC /* ArmyJargonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmyJargonManager.swift; sourceTree = "<group>"; };
 		A2517A8428B217E6001EFEDC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A2517A8728B21C1D001EFEDC /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		A2517A8928B21C4D001EFEDC /* BookmarkCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionReusableView.swift; sourceTree = "<group>"; };
 		A2517A8B28B21C75001EFEDC /* BookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2517A8D28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2517A9428B2369A001EFEDC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		A2517A9628B23744001EFEDC /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 		A2517A9828B237AA001EFEDC /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		A2517A9A28B23801001EFEDC /* SearchEmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmptyTableViewCell.swift; sourceTree = "<group>"; };
 		A2517A9C28B23875001EFEDC /* SearchHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		A2517A9E28B238C2001EFEDC /* HistoryQueryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryQueryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2580DFB28B2466C00F701BA /* armyvoca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = armyvoca.json; sourceTree = "<group>"; };
+		A2580DFE28B25DA600F701BA /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +99,7 @@
 			children = (
 				A2517A6828B13BE7001EFEDC /* Extension */,
 				A2517A5E28B0EB03001EFEDC /* App */,
+				A2580DFD28B25D6500F701BA /* UserDefaults */,
 				A2517A5F28B0EB09001EFEDC /* Resources */,
 				A2517A6028B0EBEE001EFEDC /* Model */,
 				A2517A8328B217CC001EFEDC /* Detail */,
@@ -129,9 +126,7 @@
 		A2517A5F28B0EB09001EFEDC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A2517A5C28B0EA34001EFEDC /* armydictionary.json */,
-				A2517A7428B1CA12001EFEDC /* armyvoca.json */,
-				A2517A7228B1C9DF001EFEDC /* armyVoca.json */,
+				A2580DFB28B2466C00F701BA /* armyvoca.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -140,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				A2517A6128B0EC01001EFEDC /* ArmyJargon.swift */,
+				A2517A6B28B148B3001EFEDC /* ArmyJargonManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,7 +143,6 @@
 		A2517A6328B13A3B001EFEDC /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */,
 				A2517A3A28AFE9F8001EFEDC /* HomeViewController.swift */,
 				A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */,
 				A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */,
@@ -167,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				A2517A9428B2369A001EFEDC /* SearchViewController.swift */,
-				A2517A9628B23744001EFEDC /* SearchHeaderView.swift */,
 				A2517A9828B237AA001EFEDC /* SearchResultTableViewCell.swift */,
 				A2517A9A28B23801001EFEDC /* SearchEmptyTableViewCell.swift */,
 				A2517A9C28B23875001EFEDC /* SearchHistoryTableViewCell.swift */,
@@ -193,6 +187,14 @@
 				A2517A8D28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift */,
 			);
 			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		A2580DFD28B25D6500F701BA /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				A2580DFE28B25DA600F701BA /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2517A4B28AFEA11001EFEDC /* .gitignore in Resources */,
-				A2517A7328B1C9DF001EFEDC /* armyVoca.json in Resources */,
+				A2580DFC28B2466C00F701BA /* armyvoca.json in Resources */,
 				A2517A4328AFE9FA001EFEDC /* LaunchScreen.storyboard in Resources */,
-				A2517A5D28B0EA34001EFEDC /* armydictionary.json in Resources */,
-				A2517A7528B1CA12001EFEDC /* armyvoca.json in Resources */,
 				A2517A4028AFE9FA001EFEDC /* Assets.xcassets in Resources */,
 				A2517A3E28AFE9F8001EFEDC /* Main.storyboard in Resources */,
 			);
@@ -281,10 +281,10 @@
 				A2517A8E28B21DCF001EFEDC /* EmptyBookmarkCollectionViewCell.swift in Sources */,
 				A2517A3B28AFE9F8001EFEDC /* HomeViewController.swift in Sources */,
 				A2517A9928B237AA001EFEDC /* SearchResultTableViewCell.swift in Sources */,
-				A2517A9728B23744001EFEDC /* SearchHeaderView.swift in Sources */,
 				A2517A6A28B13C2E001EFEDC /* ReusableProtocol.swift in Sources */,
 				A2517A6228B0EC01001EFEDC /* ArmyJargon.swift in Sources */,
-				A2517A6C28B148B3001EFEDC /* HomeViewModel.swift in Sources */,
+				A2580DFF28B25DA600F701BA /* UserDefaultsManager.swift in Sources */,
+				A2517A6C28B148B3001EFEDC /* ArmyJargonManager.swift in Sources */,
 				A2517A3728AFE9F8001EFEDC /* AppDelegate.swift in Sources */,
 				A2517A3928AFE9F8001EFEDC /* SceneDelegate.swift in Sources */,
 				A2517A9F28B238C2001EFEDC /* HistoryQueryCollectionViewCell.swift in Sources */,

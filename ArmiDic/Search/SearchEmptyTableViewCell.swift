@@ -18,6 +18,6 @@ class SearchEmptyTableViewCell: UITableViewCell {
     }
 
     func setLabel(query: String ) {
-        guideLabel.text = "'\(query)'에 대한\n검색결과가 없습니다"
+        guideLabel.text = query
     }
 }

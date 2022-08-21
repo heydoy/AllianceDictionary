@@ -19,4 +19,12 @@ class BookmarkCollectionViewCell: UICollectionViewCell {
     func configureUI() {
         self.layer.cornerRadius = 8 
     }
+    
+    func configureData(voca: ArmyJargon) {
+        
+        koreanLabel.text = "🇰🇷 " + voca.ko
+        abbreviationLabel.text = "▷ " + voca.abbr
+        englishLabel.text = "🇺🇸 " + voca.en
+        self.tag = voca.index
+    }
 }

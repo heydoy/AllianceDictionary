@@ -22,6 +22,13 @@ class SearchResultTableViewCell: UITableViewCell {
         self.baseView.layer.cornerRadius = 12
         
     }
+    
+    func configureData(voca: ArmyJargon ) {
+        koreanLabel.text = "🇰🇷 " + voca.ko
+        abbreviationLabel.text = "▷ " + voca.abbr
+        englishLabel.text = "🇺🇸 " + voca.en
+        self.tag = voca.index
+    }
 
 
 }

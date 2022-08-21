@@ -10,7 +10,13 @@ import UIKit
 class BookmarkViewController: UIViewController {
     // MARK: - Properties
     
-    var favorites:Int = 3
+    var favoriteList: [Int] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    let vocaList: [ArmyJargon] = ArmyJargonManager.shared.getStruct()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -21,7 +27,15 @@ class BookmarkViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        favoriteList = FavoriteManger.shared.favorite
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(detailViewCloseObserver), name: NSNotification.Name("DetailViewClosed"), object: nil)
 
+    }
+    
+
+    @objc func detailViewCloseObserver(_ notification: NSNotification) {
+        favoriteList = FavoriteManger.shared.favorite
     }
     
     // MARK: - Actions
@@ -35,13 +49,13 @@ class BookmarkViewController: UIViewController {
 extension BookmarkViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     /// 셀 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return favorites == 0 ? 1 : favorites
+        return favoriteList.count == 0 ? 1 : favoriteList.count
     }
     
     /// 셀 구성
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if favorites == 0 {
+        if favoriteList.count == 0 {
             // 단어가 없다고 보여주기
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyBookmarkCollectionViewCell.reuseIdentifier , for: indexPath) as? EmptyBookmarkCollectionViewCell else { return UICollectionViewCell() }
             
@@ -49,6 +63,7 @@ extension BookmarkViewController: UICollectionViewDelegateFlowLayout, UICollecti
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookmarkCollectionViewCell.reuseIdentifier, for: indexPath) as? BookmarkCollectionViewCell else { return UICollectionViewCell() }
             cell.configureUI()
+            cell.configureData(voca: vocaList[favoriteList[indexPath.item]])
             return cell
         }
     }
@@ -61,7 +76,7 @@ extension BookmarkViewController: UICollectionViewDelegateFlowLayout, UICollecti
         
         let cellWidth: CGFloat = width - (inset * 2)
         
-        if favorites == 0 {
+        if favoriteList.count == 0 {
             return CGSize(width: cellWidth, height: 220)
             
         } else {
@@ -75,7 +90,7 @@ extension BookmarkViewController: UICollectionViewDelegateFlowLayout, UICollecti
     /// 셀 선택했을 때
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        goDetail()
+        goDetail(index: favoriteList[indexPath.item])
     }
     
     /// 헤더
@@ -89,7 +104,7 @@ extension BookmarkViewController: UICollectionViewDelegateFlowLayout, UICollecti
 }
 
 extension BookmarkViewController {
-    func goDetail() {
+    func goDetail(index: Int) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as? DetailViewController else {  return }
@@ -98,7 +113,10 @@ extension BookmarkViewController {
         vc.modalTransitionStyle = .coverVertical
         
         // 데이터 전달하기
+        vc.voca = vocaList[index]
         
         self.present(vc, animated: true)
+        
+        
     }
 }

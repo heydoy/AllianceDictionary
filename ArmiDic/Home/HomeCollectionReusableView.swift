@@ -18,12 +18,20 @@ class HomeCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var englishVocaLabel: UILabel!
     
 
-    @IBOutlet weak var todayVocaDetailButton: UIButton!
     
     
     func configureUI() {
         vocaBackgroundView.layer.cornerRadius = 12
+
+    }
+    
+    func configureLabel(voca: ArmyJargon) {
+
+        self.tag = voca.index
         
+        koreanVocaLabel.text = "🇰🇷 " + voca.ko
+        abbrVocaLabel.text = "▷ " + voca.abbr
+        englishVocaLabel.text = "🇺🇸 " + voca.en
         
     }
 }

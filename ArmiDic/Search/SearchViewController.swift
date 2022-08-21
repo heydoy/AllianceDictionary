@@ -16,14 +16,23 @@ class SearchViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     
-    var numberOfResult: Int = 4
-    var numberOfHistory: Int = 7
+    var result: [ArmyJargon] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    var history: [String] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    let vocaList = ArmyJargonManager.shared.getStruct()
+    var query: String = ""
     
-    lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.delegate = self
-        return searchBar
-    }()
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+
     
     
     // MARK: - Lifecycle
@@ -33,8 +42,15 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        history = SearchHistoryManger.shared.searchHistory
+        
+        searchBar.delegate = self
 
     }
+    
+    
+
+    
     
 
 }
@@ -49,7 +65,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         if section == SearchCell.history.rawValue {
             return 1
         } else if section == SearchCell.result.rawValue {
-            return numberOfResult == 0 ? 1 : numberOfResult
+            return result.count == 0 ? 1 : result.count
         } else {
             return 0
         }
@@ -67,15 +83,24 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         } else if indexPath.section == SearchCell.result.rawValue {
-            if numberOfResult == 0 {
+            if result.count == 0 {
                 // 결과가 없을 때
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchEmptyTableViewCell.reuseIdentifier, for: indexPath) as? SearchEmptyTableViewCell else { return UITableViewCell() }
+                
+                if query.isEmpty {
+                    cell.setLabel(query: "")
+                }
+                else {
+                cell.setLabel(query: "\(query)에 대한 검색결과가 없습니다.")
+                }
                 
                 return cell
                 
             } else {
                 // 결과가 1개 이상 있을 때
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.reuseIdentifier, for: indexPath)  as? SearchResultTableViewCell else { return UITableViewCell() }
+                
+                cell.configureData(voca: result[indexPath.item])
                 
                 return cell
             }
@@ -91,22 +116,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         else { return "검색결과"}
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SearchHeaderView.reuseIdentifier) as? SearchHeaderView else { return nil }
-            
-            header.searchBar = searchBar
-            return header
-            
-        } else {
-            return nil
-        }
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.section == 0 {
-            return 88
+            if history.count == 0 { return 44}
+            else { return 88 }
         } else {
             return 126
         }
@@ -122,6 +137,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+    }
+    
    
 }
 
@@ -129,21 +149,75 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfHistory
+        return history.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryQueryCollectionViewCell.reuseIdentifier, for: indexPath) as? HistoryQueryCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.configureLabel(query: "검색어 \(indexPath)")
+        if history.count >= indexPath.item {
+            cell.configureLabel(query: "\(history[indexPath.item])")
+            cell.removeQueryButton.tag = indexPath.item
+            cell.removeQueryButton.addTarget(self, action: #selector(removeHistory), for: .touchUpInside)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: 72,height: 44)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        query = history[indexPath.item]
+        searchBar.text = query
+        searchVoca()
+    }
+    
+    @objc func removeHistory(_ sender: UIButton) {
+        history.remove(at: sender.tag)
+        SearchHistoryManger.shared.searchHistory = history
     }
 }
 
 extension SearchViewController: UISearchBarDelegate {
+    private func dissmissKeyboard() {
+            searchBar.resignFirstResponder()
+        }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text, !text.isEmpty {
+            // 검색어 저장
+            history.append(text)
+            SearchHistoryManger.shared.searchHistory = history
+            
+            // 검색결과 호출
+            query = text
+            searchVoca()
+            
+            
+            dissmissKeyboard()
+            
+            
+        }
+    }
+    
+    func searchVoca() {
+        result = []
+        
+        for item in vocaList{
+            let ko = item.ko
+            let abbr = item.abbr
+            let en = item.en
+            if ko.contains(query) || abbr.contains(query) ||
+                en.contains(query) {
+                result.append(item)
+                tableView.reloadData()
+            }
+        }
+        tableView.reloadData()
+    }
+
+    
     
 }
