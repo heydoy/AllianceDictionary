@@ -19,6 +19,10 @@
 		A2517A6528B13AEC001EFEDC /* HomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */; };
 		A2517A6728B13AFE001EFEDC /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */; };
 		A2517A6A28B13C2E001EFEDC /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6928B13C2E001EFEDC /* ReusableProtocol.swift */; };
+		A2517A6C28B148B3001EFEDC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */; };
+		A2517A6F28B14C2F001EFEDC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A2517A6E28B14C2F001EFEDC /* SwiftyJSON */; };
+		A2517A7328B1C9DF001EFEDC /* armyVoca.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A7228B1C9DF001EFEDC /* armyVoca.json */; };
+		A2517A7528B1CA12001EFEDC /* armyvoca.json in Resources */ = {isa = PBXBuildFile; fileRef = A2517A7428B1CA12001EFEDC /* armyvoca.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,9 @@
 		A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionReusableView.swift; sourceTree = "<group>"; };
 		A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2517A6928B13C2E001EFEDC /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
+		A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A2517A7228B1C9DF001EFEDC /* armyVoca.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = armyVoca.json; sourceTree = "<group>"; };
+		A2517A7428B1CA12001EFEDC /* armyvoca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = armyvoca.json; path = ../../../../../../../Downloads/armyvoca.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2517A6F28B14C2F001EFEDC /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				A2517A5C28B0EA34001EFEDC /* armydictionary.json */,
+				A2517A7428B1CA12001EFEDC /* armyvoca.json */,
+				A2517A7228B1C9DF001EFEDC /* armyVoca.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -113,6 +123,7 @@
 				A2517A3A28AFE9F8001EFEDC /* HomeViewController.swift */,
 				A2517A6428B13AEC001EFEDC /* HomeCollectionReusableView.swift */,
 				A2517A6628B13AFE001EFEDC /* HomeCollectionViewCell.swift */,
+				A2517A6B28B148B3001EFEDC /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 			);
 			name = ArmiDic;
 			packageProductDependencies = (
+				A2517A6E28B14C2F001EFEDC /* SwiftyJSON */,
 			);
 			productName = ArmiDic;
 			productReference = A2517A3328AFE9F8001EFEDC /* ArmiDic.app */;
@@ -172,6 +184,7 @@
 			);
 			mainGroup = A2517A2A28AFE9F8001EFEDC;
 			packageReferences = (
+				A2517A6D28B14C2F001EFEDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = A2517A3428AFE9F8001EFEDC /* Products */;
 			projectDirPath = "";
@@ -188,8 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2517A4B28AFEA11001EFEDC /* .gitignore in Resources */,
+				A2517A7328B1C9DF001EFEDC /* armyVoca.json in Resources */,
 				A2517A4328AFE9FA001EFEDC /* LaunchScreen.storyboard in Resources */,
 				A2517A5D28B0EA34001EFEDC /* armydictionary.json in Resources */,
+				A2517A7528B1CA12001EFEDC /* armyvoca.json in Resources */,
 				A2517A4028AFE9FA001EFEDC /* Assets.xcassets in Resources */,
 				A2517A3E28AFE9F8001EFEDC /* Main.storyboard in Resources */,
 			);
@@ -205,6 +220,7 @@
 				A2517A3B28AFE9F8001EFEDC /* HomeViewController.swift in Sources */,
 				A2517A6A28B13C2E001EFEDC /* ReusableProtocol.swift in Sources */,
 				A2517A6228B0EC01001EFEDC /* ArmyJargon.swift in Sources */,
+				A2517A6C28B148B3001EFEDC /* HomeViewModel.swift in Sources */,
 				A2517A3728AFE9F8001EFEDC /* AppDelegate.swift in Sources */,
 				A2517A3928AFE9F8001EFEDC /* SceneDelegate.swift in Sources */,
 				A2517A6528B13AEC001EFEDC /* HomeCollectionReusableView.swift in Sources */,
@@ -432,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2517A6D28B14C2F001EFEDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2517A6E28B14C2F001EFEDC /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2517A6D28B14C2F001EFEDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A2517A2B28AFE9F8001EFEDC /* Project object */;
 }
