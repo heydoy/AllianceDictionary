@@ -30,7 +30,6 @@ class SearchViewController: UIViewController {
     var query: String = ""
     
     
-    @IBOutlet weak var searchBar: UISearchBar!
     
 
     
@@ -44,14 +43,8 @@ class SearchViewController: UIViewController {
         
         history = SearchHistoryManger.shared.searchHistory
         
-        searchBar.delegate = self
 
     }
-    
-    
-
-    
-    
 
 }
 
@@ -170,8 +163,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         query = history[indexPath.item]
-        searchBar.text = query
-        searchVoca()
+//        searchVoca()
     }
     
     @objc func removeHistory(_ sender: UIButton) {
@@ -180,44 +172,44 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
-extension SearchViewController: UISearchBarDelegate {
-    private func dissmissKeyboard() {
-            searchBar.resignFirstResponder()
-        }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let text = searchBar.text, !text.isEmpty {
-            // 검색어 저장
-            history.append(text)
-            SearchHistoryManger.shared.searchHistory = history
-            
-            // 검색결과 호출
-            query = text
-            searchVoca()
-            
-            
-            dissmissKeyboard()
-            
-            
-        }
-    }
-    
-    func searchVoca() {
-        result = []
-        
-        for item in vocaList{
-            let ko = item.ko
-            let abbr = item.abbr
-            let en = item.en
-            if ko.contains(query) || abbr.contains(query) ||
-                en.contains(query) {
-                result.append(item)
-                tableView.reloadData()
-            }
-        }
-        tableView.reloadData()
-    }
-
-    
-    
-}
+//extension SearchViewController: UISearchBarDelegate {
+//    private func dissmissKeyboard() {
+//            searchBar.resignFirstResponder()
+//        }
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        if let text = searchBar.text, !text.isEmpty {
+//            // 검색어 저장
+//            history.append(text)
+//            SearchHistoryManger.shared.searchHistory = history
+//
+//            // 검색결과 호출
+//            query = text
+//            searchVoca()
+//
+//
+//            dissmissKeyboard()
+//
+//
+//        }
+//    }
+//
+//    func searchVoca() {
+//        result = []
+//
+//        for item in vocaList{
+//            let ko = item.ko
+//            let abbr = item.abbr
+//            let en = item.en
+//            if ko.contains(query) || abbr.contains(query) ||
+//                en.contains(query) {
+//                result.append(item)
+//                tableView.reloadData()
+//            }
+//        }
+//        tableView.reloadData()
+//    }
+//
+//
+//
+//}

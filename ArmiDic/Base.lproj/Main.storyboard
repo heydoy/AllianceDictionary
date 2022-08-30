@@ -367,22 +367,46 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kez-Df-12B">
-                                        <rect key="frame" x="14" y="41" width="386" height="57"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <offsetWrapper key="searchTextPositionAdjustment" horizontal="4" vertical="0.0"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    </searchBar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKK-zh-h50">
+                                        <rect key="frame" x="0.0" y="34" width="414" height="76"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7f9-St-Hc2">
+                                                <rect key="frame" x="20" y="16" width="330" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Zhx-ht-CEj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqI-Ox-Pcf">
+                                                <rect key="frame" x="350" y="16" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="SqI-Ox-Pcf" secondAttribute="height" multiplier="1:1" id="07B-w5-cU1"/>
+                                                    <constraint firstAttribute="height" constant="44" id="6up-lm-CwW"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="SqI-Ox-Pcf" firstAttribute="leading" secondItem="7f9-St-Hc2" secondAttribute="trailing" id="1rV-4x-EhO"/>
+                                            <constraint firstAttribute="trailing" secondItem="SqI-Ox-Pcf" secondAttribute="trailing" constant="20" id="787-p9-wM9"/>
+                                            <constraint firstItem="SqI-Ox-Pcf" firstAttribute="centerY" secondItem="oKK-zh-h50" secondAttribute="centerY" id="PBR-KL-e6W"/>
+                                            <constraint firstItem="7f9-St-Hc2" firstAttribute="centerY" secondItem="oKK-zh-h50" secondAttribute="centerY" id="TDQ-co-8qh"/>
+                                            <constraint firstItem="7f9-St-Hc2" firstAttribute="leading" secondItem="oKK-zh-h50" secondAttribute="leading" constant="20" id="fnC-TG-DXt"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kez-Df-12B" secondAttribute="bottom" constant="12" id="8GK-Ix-OX8"/>
+                                    <constraint firstAttribute="trailing" secondItem="oKK-zh-h50" secondAttribute="trailing" id="6Mg-VQ-G1d"/>
                                     <constraint firstItem="Vvh-v4-ttJ" firstAttribute="leading" secondItem="itF-wk-DPB" secondAttribute="leading" constant="20" id="AfP-6y-hlo"/>
+                                    <constraint firstItem="oKK-zh-h50" firstAttribute="leading" secondItem="itF-wk-DPB" secondAttribute="leading" id="LIa-Pr-uzt"/>
                                     <constraint firstItem="Vvh-v4-ttJ" firstAttribute="top" secondItem="itF-wk-DPB" secondAttribute="top" constant="12" id="PCG-PE-liS"/>
-                                    <constraint firstItem="kez-Df-12B" firstAttribute="top" secondItem="Vvh-v4-ttJ" secondAttribute="bottom" constant="7" id="QVX-yK-lgA"/>
-                                    <constraint firstItem="kez-Df-12B" firstAttribute="leading" secondItem="itF-wk-DPB" secondAttribute="leading" constant="14" id="iqw-ze-qj5"/>
+                                    <constraint firstItem="oKK-zh-h50" firstAttribute="top" secondItem="Vvh-v4-ttJ" secondAttribute="bottom" id="jEu-Gp-Jf7"/>
+                                    <constraint firstAttribute="bottom" secondItem="oKK-zh-h50" secondAttribute="bottom" id="nB3-aC-rBf"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vvh-v4-ttJ" secondAttribute="trailing" constant="20" symbolic="YES" id="sUL-pQ-Orz"/>
-                                    <constraint firstAttribute="trailing" secondItem="kez-Df-12B" secondAttribute="trailing" constant="14" id="xxg-O9-vEi"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -401,7 +425,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="Z31-ht-h4H"/>
                     <connections>
-                        <outlet property="searchBar" destination="kez-Df-12B" id="VHX-21-Xpd"/>
                         <outlet property="tableView" destination="22L-sM-ZP1" id="Z2P-aH-NTS"/>
                     </connections>
                 </viewController>
