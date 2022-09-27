@@ -25,7 +25,9 @@ class SearchViewController: UIViewController {
     }
     var history: [String] = [] {
         didSet {
-            tableView.reloadData()
+            if let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? SearchHistoryTableViewCell {
+               cell.historyQueryCollectionView.reloadData()
+            }
         }
     }
     let vocaList = ArmyJargonManager.shared.getStruct()
@@ -37,13 +39,18 @@ class SearchViewController: UIViewController {
     
     
     // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        history = SearchHistoryManger.shared.searchHistory
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
         
-        history = SearchHistoryManger.shared.searchHistory
+        
         
         searchBar.delegate = self
 
@@ -135,7 +142,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        goDetail(index: indexPath.item)
     }
     
    
@@ -143,6 +150,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return history.count
@@ -166,12 +174,36 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         query = history[indexPath.item]
-//        searchVoca()
+        searchVoca()
     }
     
     @objc func removeHistory(_ sender: UIButton) {
-        history.remove(at: sender.tag)
-        SearchHistoryManger.shared.searchHistory = history
+        
+        
+        let alert = UIAlertController(title: "\(history[sender.tag])을/를 검색기록에서 지우시겠습니까?", message: nil, preferredStyle: .alert)
+        
+        let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            self.history.remove(at: sender.tag)
+            SearchHistoryManger.shared.searchHistory = self.history
+            self.history = SearchHistoryManger.shared.searchHistory
+            
+            self.view.makeToast("삭제완료")
+            
+            if let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? SearchHistoryTableViewCell {
+               cell.historyQueryCollectionView.reloadData()
+            }
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(remove)
+        alert.addAction(cancel)
+        
+        if history.count > sender.tag {
+            present(alert, animated: true)
+            
+        } else {
+            view.makeToast("잘못된 요청입니다.")
+        }
     }
 }
 
@@ -185,6 +217,8 @@ extension SearchViewController: UISearchBarDelegate {
             // 검색어 저장
             history.append(text)
             SearchHistoryManger.shared.searchHistory = history
+            history = SearchHistoryManger.shared.searchHistory
+            
 
             // 검색결과 호출
             query = text
@@ -215,3 +249,20 @@ extension SearchViewController: UISearchBarDelegate {
 
 
 }
+
+extension SearchViewController {
+    func goDetail(index: Int) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as? DetailViewController else {  return }
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .coverVertical
+        
+        // 데이터 전달하기
+        vc.voca = result[index]
+        
+        self.present(vc, animated: true)
+    }
+}
+
