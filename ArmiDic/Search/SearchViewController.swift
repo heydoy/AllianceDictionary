@@ -31,7 +31,11 @@ class SearchViewController: UIViewController {
         }
     }
     let vocaList = ArmyJargonManager.shared.getStruct()
-    var query: String = ""
+    var query: String = "" {
+        didSet {
+            searchBar.text = query
+        }
+    }
     
     
     
