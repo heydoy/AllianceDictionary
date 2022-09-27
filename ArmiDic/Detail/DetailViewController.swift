@@ -42,9 +42,11 @@ class DetailViewController: UIViewController {
     // MARK: - Actions
     
     func configureButton() {
+        addFavoriteButton.titleLabel?.font = .boldSystemFont(ofSize: 12)
         
         if favoriteList.contains(voca.index) {
             addFavoriteButton.backgroundColor = .systemGray2
+            
             addFavoriteButton.setTitle("즐겨찾기됨", for: .normal)
             
         } else {
@@ -66,9 +68,21 @@ class DetailViewController: UIViewController {
             
             
             if let index = favoriteList.firstIndex(of: voca.index) {
-                favoriteList.remove(at: index)
-                FavoriteManger.shared.favorite = favoriteList
-                self.view.makeToast("🔖 즐겨찾기에서 해제되었습니다.", duration: 0.3, position: .center, title: nil, image: nil, style: ToastStyle(), completion: nil)
+                
+                let alert = UIAlertController(title: "즐겨찾기에서 삭제하시겠습니까?", message: nil, preferredStyle: .alert)
+                
+                let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in
+                    self.favoriteList.remove(at: index)
+                    FavoriteManger.shared.favorite = self.favoriteList
+                    self.view.makeToast("🔖 즐겨찾기에서 해제되었습니다.", duration: 0.3, position: .center, title: nil, image: nil, style: ToastStyle(), completion: nil)
+                    self.configureButton()
+                }
+                let cancel = UIAlertAction(title: "취소", style: .cancel)
+                
+                alert.addAction(remove)
+                alert.addAction(cancel)
+                
+                present(alert, animated: true)
             }
             
         }
@@ -98,6 +112,7 @@ class DetailViewController: UIViewController {
         
     }
     
+
     
     
     
