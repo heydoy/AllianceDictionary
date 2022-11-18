@@ -35,7 +35,7 @@
 		A2580DFF28B25DA600F701BA /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2580DFE28B25DA600F701BA /* UserDefaultsManager.swift */; };
 		A2CDD23B290EEA0E000DEF1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2CDD23D290EEA0E000DEF1E /* Localizable.strings */; };
 		A2CDD240290EEA48000DEF1E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CDD23F290EEA48000DEF1E /* String+Extension.swift */; };
-		A2CDD243290EEA97000DEF1E /* InfoPlist.strings .strings in Resources */ = {isa = PBXBuildFile; fileRef = A2CDD245290EEA97000DEF1E /* InfoPlist.strings .strings */; };
+		A2CDD243290EEA97000DEF1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2CDD245290EEA97000DEF1E /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,8 +71,8 @@
 		A2CDD23C290EEA0E000DEF1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2CDD23E290EEA10000DEF1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2CDD23F290EEA48000DEF1E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		A2CDD244290EEA97000DEF1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/InfoPlist.strings .strings"; sourceTree = "<group>"; };
-		A2CDD246290EEA9A000DEF1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = "ko.lproj/InfoPlist.strings .strings"; sourceTree = "<group>"; };
+		A2CDD244290EEA97000DEF1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2CDD246290EEA9A000DEF1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				A2CDD23D290EEA0E000DEF1E /* Localizable.strings */,
-				A2CDD245290EEA97000DEF1E /* InfoPlist.strings .strings */,
+				A2CDD245290EEA97000DEF1E /* InfoPlist.strings */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -298,7 +298,7 @@
 				A2CDD23B290EEA0E000DEF1E /* Localizable.strings in Resources */,
 				A2580DFC28B2466C00F701BA /* armyvoca.json in Resources */,
 				A2517A4328AFE9FA001EFEDC /* LaunchScreen.storyboard in Resources */,
-				A2CDD243290EEA97000DEF1E /* InfoPlist.strings .strings in Resources */,
+				A2CDD243290EEA97000DEF1E /* InfoPlist.strings in Resources */,
 				A2517A4028AFE9FA001EFEDC /* Assets.xcassets in Resources */,
 				A2517A3E28AFE9F8001EFEDC /* Main.storyboard in Resources */,
 			);
@@ -365,13 +365,13 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		A2CDD245290EEA97000DEF1E /* InfoPlist.strings .strings */ = {
+		A2CDD245290EEA97000DEF1E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A2CDD244290EEA97000DEF1E /* en */,
 				A2CDD246290EEA9A000DEF1E /* ko */,
 			);
-			name = "InfoPlist.strings .strings";
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
