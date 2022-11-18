@@ -36,12 +36,7 @@ class SearchViewController: UIViewController {
             searchBar.text = query
         }
     }
-    
-    
-    
-
-    
-    
+ 
     // MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -76,8 +71,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return 0
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,7 +91,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.setLabel(query: "")
                 }
                 else {
-                cell.setLabel(query: "\(query)에 대한 검색결과가 없습니다.")
+                    cell.setLabel(query: "NoSearchResult".localized(arguments: query))
                 }
                 
                 return cell
@@ -115,12 +108,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        
-        
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 { return nil }
-        else { return "검색결과"}
+        else { return "SearchResult".localized}
     }
     
     
@@ -145,17 +136,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         goDetail(index: indexPath.item)
     }
-    
-   
 }
 
-
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return history.count
     }
@@ -184,29 +170,29 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     @objc func removeHistory(_ sender: UIButton) {
         
         
-        let alert = UIAlertController(title: "\(history[sender.tag])을/를 검색기록에서 지우시겠습니까?", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "WantToRemoveSearchHistory".localized(arguments: history[sender.tag]), message: nil, preferredStyle: .alert)
         
-        let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in
+        let remove = UIAlertAction(title: "Remove".localized, style: .destructive) { _ in
             self.history.remove(at: sender.tag)
             SearchHistoryManger.shared.searchHistory = self.history
             self.history = SearchHistoryManger.shared.searchHistory
             
-            self.view.makeToast("삭제완료")
+            self.view.makeToast("FinishedToRemove".localized)
             
             if let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? SearchHistoryTableViewCell {
                cell.historyQueryCollectionView.reloadData()
             }
         }
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let cancel = UIAlertAction(title: "Cancel".localized, style: .cancel)
         
         alert.addAction(remove)
         alert.addAction(cancel)
         
-        if history.count > sender.tag {
+        if history.count >= sender.tag {
             present(alert, animated: true)
             
         } else {
-            view.makeToast("잘못된 요청입니다.")
+            view.makeToast("BadRequest".localized)
         }
     }
 }
@@ -223,14 +209,10 @@ extension SearchViewController: UISearchBarDelegate {
             SearchHistoryManger.shared.searchHistory = history
             history = SearchHistoryManger.shared.searchHistory
             
-
             // 검색결과 호출
             query = text
             searchVoca()
-
-
             dissmissKeyboard()
-
         }
     }
 
@@ -249,9 +231,6 @@ extension SearchViewController: UISearchBarDelegate {
         }
         tableView.reloadData()
     }
-
-
-
 }
 
 extension SearchViewController {

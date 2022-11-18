@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings .strings
+  ArmiDic
+
+  Created by Doy Kim on 2022/10/31.
+  
+*/
+
+"CFBundleDisplayName" = "Alliance Dictionary";
+"CFBundleDevelopmentRegion" = "en_US";

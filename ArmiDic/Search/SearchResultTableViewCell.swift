@@ -24,8 +24,9 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     func configureData(voca: ArmyJargon ) {
+        let abbrReplacedString = voca.abbr.isEmpty ? "-" : voca.abbr
         koreanLabel.text = "🇰🇷 " + voca.ko
-        abbreviationLabel.text = "▷ " + voca.abbr
+        abbreviationLabel.text = "▷ " + abbrReplacedString
         englishLabel.text = "🇺🇸 " + voca.en
         self.tag = voca.index
     }

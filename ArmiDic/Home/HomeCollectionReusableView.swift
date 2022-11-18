@@ -28,9 +28,9 @@ class HomeCollectionReusableView: UICollectionReusableView {
     func configureLabel(voca: ArmyJargon) {
 
         self.tag = voca.index
-        
+        let abbrReplacedString = voca.abbr.isEmpty ? "-" : voca.abbr
         koreanVocaLabel.text = "🇰🇷 " + voca.ko
-        abbrVocaLabel.text = "▷ " + voca.abbr
+        abbrVocaLabel.text = "▷ " + abbrReplacedString
         englishVocaLabel.text = "🇺🇸 " + voca.en
         
     }

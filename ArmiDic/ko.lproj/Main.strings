@@ -1,0 +1,90 @@
+
+/* Class = "UILabel"; text = "📌 단어보기"; ObjectID = "3O6-Ss-RbY"; */
+"3O6-Ss-RbY.text" = "📌 Vocabulary";
+
+/* Class = "UILabel"; text = "🇰🇷한국어단어"; ObjectID = "5vl-g5-5Im"; */
+"5vl-g5-5Im.text" = "🇰🇷 Korean";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6ry-QR-IMm"; */
+"6ry-QR-IMm.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "즐겨찾기에 추가"; ObjectID = "FVi-5L-G9O"; */
+"FVi-5L-G9O.configuration.title" = "Add to Favorites";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "FVi-5L-G9O"; */
+"FVi-5L-G9O.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "🇰🇷 한국어 단어"; ObjectID = "FWG-0K-ymQ"; */
+"FWG-0K-ymQ.text" = "🇰🇷 Korean";
+
+/* Class = "UILabel"; text = "약어"; ObjectID = "H7W-SB-l8I"; */
+"H7W-SB-l8I.text" = "Abbreviation";
+
+/* Class = "UILabel"; text = "🇺🇸 영어 단어"; ObjectID = "LNk-vm-C3R"; */
+"LNk-vm-C3R.text" = "🇺🇸 English";
+
+/* Class = "UILabel"; text = "검색기록 쿼리"; ObjectID = "Lh9-Iy-fkG"; */
+"Lh9-Iy-fkG.text" = "검색기록 쿼리";
+
+/* Class = "UILabel"; text = "🇺🇸 영어 단어"; ObjectID = "NWN-3g-0AK"; */
+"NWN-3g-0AK.text" = "🇺🇸 영어 단어";
+
+/* Class = "UIButton"; configuration.title = "클립보드로 복사"; ObjectID = "O6b-wY-UdP"; */
+"O6b-wY-UdP.configuration.title" = "클립보드로 복사";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "O6b-wY-UdP"; */
+"O6b-wY-UdP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "💡 단어 검색"; ObjectID = "Vvh-v4-ttJ"; */
+"Vvh-v4-ttJ.text" = "💡 단어 검색";
+
+/* Class = "UILabel"; text = "🇰🇷한국어단어"; ObjectID = "W9n-KW-7cx"; */
+"W9n-KW-7cx.text" = "🇰🇷한국어단어";
+
+/* Class = "UILabel"; text = "🇺🇸영어"; ObjectID = "dFQ-04-23u"; */
+"dFQ-04-23u.text" = "🇺🇸영어";
+
+/* Class = "UILabel"; text = "🇺🇸영어"; ObjectID = "dI7-dN-Eq0"; */
+"dI7-dN-Eq0.text" = "🇺🇸영어";
+
+/* Class = "UILabel"; text = "즐겨찾는 단어가 없습니다."; ObjectID = "dZB-bm-pva"; */
+"dZB-bm-pva.text" = "즐겨찾는 단어가 없습니다.";
+
+/* Class = "UILabel"; text = "약어"; ObjectID = "dq0-SE-UZ1"; */
+"dq0-SE-UZ1.text" = "약어";
+
+/* Class = "UILabel"; text = "📚 검색기록"; ObjectID = "fQr-gK-kcL"; */
+"fQr-gK-kcL.text" = "📚 검색기록";
+
+/* Class = "UILabel"; text = "약어"; ObjectID = "g74-ZF-c5M"; */
+"g74-ZF-c5M.text" = "약어";
+
+/* Class = "UILabel"; text = "🇰🇷 "; ObjectID = "iqq-U3-nXv"; */
+"iqq-U3-nXv.text" = "🇰🇷 ";
+
+/* Class = "UILabel"; text = "약어"; ObjectID = "jrl-2X-Hi1"; */
+"jrl-2X-Hi1.text" = "약어";
+
+/* Class = "UILabel"; text = "📖 모든 단어 보기"; ObjectID = "kKh-ir-cWF"; */
+"kKh-ir-cWF.text" = "📖 모든 단어 보기";
+
+/* Class = "UILabel"; text = "약어"; ObjectID = "pZT-eX-Yr5"; */
+"pZT-eX-Yr5.text" = "약어";
+
+/* Class = "UILabel"; text = "🇰🇷 한국어 단어"; ObjectID = "qrX-lV-ALM"; */
+"qrX-lV-ALM.text" = "🇰🇷 한국어 단어";
+
+/* Class = "UILabel"; text = "📌 오늘의 추천단어"; ObjectID = "t4n-SF-2ch"; */
+"t4n-SF-2ch.text" = "📌 오늘의 추천단어";
+
+/* Class = "UILabel"; text = "🔖 즐겨찾는 단어"; ObjectID = "tlx-ce-qpG"; */
+"tlx-ce-qpG.text" = "🔖 즐겨찾는 단어";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uux-zv-lJT"; */
+"uux-zv-lJT.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "🇺🇸 "; ObjectID = "x91-2X-vte"; */
+"x91-2X-vte.text" = "🇺🇸 ";
+
+/* Class = "UILabel"; text = "'검색어'에 대한 검색결과가 없습니다"; ObjectID = "yR1-ic-JjN"; */
+"yR1-ic-JjN.text" = "'검색어'에 대한 검색결과가 없습니다";

@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  ArmiDic
+
+  Created by Doy Kim on 2022/10/31.
+  
+*/
+
+// 공통
+"Cancel" = "취소";
+"Remove" = "삭제";
+"FinishedToRemove" = "삭제완료";
+"BadRequest" = "잘못된 요청입니다.";
+
+// 클립보드
+"CopiedToClipboard" = "클립보드에 복사되었습니다";
+"PasteboardString" = "🇰🇷 한국어 : %@\n▷ 약어 : %@\n🇺🇸 영어 : %@";
+
+// 즐겨찾기
+"AddFavorite" = "즐겨찾기에 추가되었습니다.";
+"RemoveFavorite" = "즐겨찾기에서 제거되었습니다";
+"WantToRemoveFavorite" = "즐겨찾기에서 삭제하시겠습니까?";
+
+"Favorites" = "즐겨찾기";
+"AddToFavorites" = "즐겨찾기에 추가";
+"RemoveFromFavorites" = "즐겨찾기 제거";
+
+// 검색
+"NoSearchResult" = "%@에 대한 검색결과가 없습니다.";
+"SearchResult" = "검색결과";
+"WantToRemoveSearchHistory" = "$@ 을/를 검색기록에서 지우시겠습니까?";
