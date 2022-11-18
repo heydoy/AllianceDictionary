@@ -475,6 +475,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PyA-fO-w0w">
+                                                    <rect key="frame" x="4" y="-4" width="50" height="40"/>
+                                                    <color key="tintColor" systemColor="systemPinkColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="Fg8-Vp-6N5"/>
+                                                        <constraint firstAttribute="width" constant="50" id="FoJ-Qq-0gG"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dFQ-04-23u" secondAttribute="bottom" constant="12" id="1wh-Tv-MbU"/>
@@ -485,7 +493,9 @@
                                                 <constraint firstItem="W9n-KW-7cx" firstAttribute="centerX" secondItem="H7W-SB-l8I" secondAttribute="centerX" id="FaD-xq-EVI"/>
                                                 <constraint firstItem="H7W-SB-l8I" firstAttribute="centerX" secondItem="opJ-8L-mTU" secondAttribute="centerX" id="YZs-FF-K8L"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H7W-SB-l8I" secondAttribute="trailing" constant="12" id="cuC-ej-o6L"/>
+                                                <constraint firstItem="PyA-fO-w0w" firstAttribute="top" secondItem="opJ-8L-mTU" secondAttribute="top" constant="-4" id="eJJ-Io-jR9"/>
                                                 <constraint firstItem="dFQ-04-23u" firstAttribute="top" secondItem="H7W-SB-l8I" secondAttribute="bottom" constant="6" id="f1J-f7-P2D"/>
+                                                <constraint firstItem="PyA-fO-w0w" firstAttribute="leading" secondItem="opJ-8L-mTU" secondAttribute="leading" constant="4" id="gag-PN-h3n"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dFQ-04-23u" secondAttribute="trailing" constant="12" id="sKY-B3-drt"/>
                                                 <constraint firstItem="H7W-SB-l8I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="opJ-8L-mTU" secondAttribute="leading" constant="12" id="th1-hl-HmG"/>
                                                 <constraint firstItem="dFQ-04-23u" firstAttribute="centerX" secondItem="H7W-SB-l8I" secondAttribute="centerX" id="vKU-NW-d5g"/>
@@ -493,7 +503,7 @@
                                                 <constraint firstItem="W9n-KW-7cx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="opJ-8L-mTU" secondAttribute="leading" constant="12" id="wgi-Ky-Vbf"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" name="baseColor"/>
+                                        <color key="backgroundColor" name="favoriteColor"/>
                                         <size key="customSize" width="182" height="183"/>
                                         <connections>
                                             <outlet property="abbreviationLabel" destination="H7W-SB-l8I" id="dEu-Qx-TVY"/>
@@ -558,7 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yg2-O2-LdG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="1217"/>
+            <point key="canvasLocation" x="821.73913043478262" y="1216.7410714285713"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="HRR-tO-uc6">
@@ -714,6 +724,9 @@
         <namedColor name="baseColor">
             <color red="0.94117647058823528" green="0.94509803921568625" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="favoriteColor">
+            <color red="0.99505883455276489" green="0.93802419310588037" blue="0.96048385621630883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="primaryColor">
             <color red="0.20392156862745098" green="0.2196078431372549" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -725,6 +738,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
