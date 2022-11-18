@@ -28,4 +28,4 @@
 // 검색
 "NoSearchResult" = "%@에 대한 검색결과가 없습니다.";
 "SearchResult" = "검색결과";
-"WantToRemoveSearchHistory" = "$@ 을/를 검색기록에서 지우시겠습니까?";
+"WantToRemoveSearchHistory" = "%@ 을/를 검색기록에서 지우시겠습니까?";
