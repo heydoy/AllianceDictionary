@@ -40,7 +40,7 @@ class SearchViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        history = SearchHistoryManger.shared.searchHistory
+        history = SearchHistoryManger.shared.searchHistory.reversed()
     }
     
     override func viewDidLoad() {
@@ -48,9 +48,7 @@ class SearchViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
-        
+
         searchBar.delegate = self
 
     }
@@ -169,13 +167,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     @objc func removeHistory(_ sender: UIButton) {
         
-        
         let alert = UIAlertController(title: "WantToRemoveSearchHistory".localized(arguments: history[sender.tag]), message: nil, preferredStyle: .alert)
         
         let remove = UIAlertAction(title: "Remove".localized, style: .destructive) { _ in
             self.history.remove(at: sender.tag)
-            SearchHistoryManger.shared.searchHistory = self.history
-            self.history = SearchHistoryManger.shared.searchHistory
+            SearchHistoryManger.shared.searchHistory = self.history.reversed()
+            self.history = SearchHistoryManger.shared.searchHistory.reversed()
             
             self.view.makeToast("FinishedToRemove".localized)
             
@@ -205,9 +202,9 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, !text.isEmpty {
             // 검색어 저장
-            history.append(text)
-            SearchHistoryManger.shared.searchHistory = history
-            history = SearchHistoryManger.shared.searchHistory
+            history.insert(text, at: 0)
+            SearchHistoryManger.shared.searchHistory = history.reversed()
+            history = SearchHistoryManger.shared.searchHistory.reversed()
             
             // 검색결과 호출
             query = text
