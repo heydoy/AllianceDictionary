@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     var totalCount = 0
     
     var vocaList: [ArmyJargon] = []
-    
+    var recommendVocaNo = 0
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -40,10 +40,6 @@ class HomeViewController: UIViewController {
         
         collectionView.reloadData()
 
-
-        
-        
-        
     }
     
     
@@ -92,11 +88,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         
         if vocaList.count > 0 {
             let index = Int.random(in: 0..<vocaList.count)
-        header.configureLabel(voca: vocaList[index])
+            recommendVocaNo = index
+            header.configureLabel(voca: vocaList[index])
+            header.headerDidTapped = { [weak self] in
+                self?.goDetail(index: index)
+            }
         }
-        
-
-        
 
         return header
     }

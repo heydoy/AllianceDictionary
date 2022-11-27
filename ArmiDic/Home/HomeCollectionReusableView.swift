@@ -17,12 +17,23 @@ class HomeCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var englishVocaLabel: UILabel!
     
-
+    var headerDidTapped: (()->())?
     
+    // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+    }
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGuesture))
+                addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: - Actions, Helpers
     func configureUI() {
         vocaBackgroundView.layer.cornerRadius = 12
-
     }
     
     func configureLabel(voca: ArmyJargon) {
@@ -33,5 +44,8 @@ class HomeCollectionReusableView: UICollectionReusableView {
         abbrVocaLabel.text = "▷ " + abbrReplacedString
         englishVocaLabel.text = "🇺🇸 " + voca.en
         
+    }
+    @objc func handleTapGuesture() {
+        headerDidTapped?()
     }
 }
